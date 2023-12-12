@@ -2,15 +2,13 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 @import '~@fortawesome/fontawesome-free/css/solid';
 
-@media {
-    body {
-        background-color: #A4C3B2;
-        width: auto;
-        min-height: 100vh;
-        margin: 0;
-        font-family: "Heebo", sans-serif;
-        border: 10px solid #A4C3B2;
-    }
+body {
+    background-color: #A4C3B2;
+    width: auto;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Heebo", sans-serif;
+    border: 10px solid #A4C3B2;
 }
 
 .app-brand {
@@ -172,7 +170,7 @@ a.nav-link:hover {
     box-shadow: #232323 1px 1px 16px;
 }
 
-p, h2, h4, h5{
+p, h2, h4, h5 {
     text-align: center;
 }
 
