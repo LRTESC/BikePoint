@@ -1,0 +1,181 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '~@fortawesome/fontawesome-free/css/solid';
+
+@media {
+    body {
+        background-color: #A4C3B2;
+        width: auto;
+        min-height: 100vh;
+        margin: 0;
+        font-family: "Heebo", sans-serif;
+        border: 10px solid #A4C3B2;
+    }
+}
+
+.app-brand {
+    margin: 1% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu {
+    box-shadow: #232323 1px 1px 16px;
+    margin: 1% auto;
+    width: auto;
+    padding: 10px 400px 10px 400px;
+    transition: 1s;
+    background-color: #EAF4F4;
+    border: 5px solid #A4C3B2;
+    border-radius: 30px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 30px;
+}
+
+a.nav-link {
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 5px;
+    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+a.nav-link:hover {
+    text-decoration: underline;
+    color: #A4C3B2;
+}
+
+#content {
+    top: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: #232323 1px 1px 16px;
+    margin: 1% auto;
+    padding: 20px;
+    background-color: #EAF4F4;
+    border: 5px solid #A4C3B2;
+    border-radius: 30px;
+}
+
+.copy {
+    margin: auto;
+    text-align: center;
+    color: #232323;
+    border-top: 5px solid #A4C3B2;
+}
+
+.breadcrumb {
+    padding: 0.1rem;
+}
+
+.breadcrumb a {
+    color: #232323;
+}
+
+.breadcrumb a:hover {
+    color: #EAF4F4;
+}
+
+.breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0.25rem;
+}
+
+.logo-bike {
+    width: 80px;
+    height: auto;
+    margin-top: 5px;
+}
+
+.logo-strava-footer,
+.logo-etoile {
+    width: 40px;
+    height: auto;
+    margin-top: 5px;
+}
+
+.logo-add {
+    color: #EAF4F4;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+}
+
+.logo-add a:hover {
+    color: #EAF4F4;
+}
+
+.logo-strava {
+    background-color: #EAF4F4;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+}
+
+.btn {
+    width: 120px;
+    background-color: #EAF4F4;
+    color: #232323;
+    position: absolute;
+    right: 40px;
+    border-radius: 30px;
+    border: 5px solid #A4C3B2;
+    box-shadow: #232323 1px 1px 16px;
+}
+
+.user-input {
+    width: auto;
+    background-color: #EAF4F4;
+    color: #232323;
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    border-radius: 20px;
+    border: 6px solid #A4C3B2;
+    box-shadow: #232323 1px 1px 16px;
+}
+
+.container {
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-right: 5px;
+    margin-bottom: 40px;
+}
+
+.photo-velo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: 6px solid #A4C3B2;
+    box-shadow: #232323 1px 1px 16px;
+}
+
+p, h2, h4, h5{
+    text-align: center;
+}
+
+.home-content {
+    width: auto;
+}

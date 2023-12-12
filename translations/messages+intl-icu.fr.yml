@@ -1,0 +1,46 @@
+label:
+  brand: Marque
+  country_code: Code pays
+  name: Nom
+
+title:
+  bikepoint: Bikepoint | Remplissez vos gourdes
+  bikepoint_brand: BikePoint
+  sponsored_by: sponsorisé par Strava
+
+menu:
+  home: Accueil
+  course: Parcours
+  point: Localisation
+  advice: Conseil
+  trade: Troc / Articles
+
+message:
+  list_course: Liste parcours
+  footer_copyright: © BikePoint, la passion du vélo avant tout |
+  welcome: Bienvenue sur BikePoint
+  guide: Votre Guide Ultime de l'Aventure à Deux Roues !
+  explore_the_world: Explorez l'univers passionnant de Bikepoint, où chaque coup de pédale devient une aventure exceptionnelle. Notre
+    application redéfinit la façon dont vous vivez et partagez vos parcours, en intégrant des fonctionnalités
+    uniques pour les passionnés de vélo comme vous.
+  stay_connected: Restez Connecté à l'Excitation Cycliste Explorez notre blog pour des récits inspirants, des conseils exclusifs et les dernières tendances cyclistes. Ne manquez aucune nouvelle, soyez informé sur les événements à venir et profitez d'offres spéciales réservées à la communauté Bikepoint.
+  exciting_community: Parcours Époustouflants, Communauté Palpitante
+  join_the_community: Rejoignez la communauté mondiale de cyclistes intrépides sur Bikepoint. Partagez vos itinéraires
+    préférés, découvrez de nouvelles destinations et connectez-vous avec des compagnons de route qui
+    partagent votre amour pour la liberté à deux roues.
+  nutrition_advice: Conseils Nutritionnels sur Mesure
+  optimise_your_performance: Optimisez vos performances avec nos conseils nutritionnels adaptés à vos aventures à vélo. Des experts
+    passionnés vous guideront pour une alimentation qui soutient votre passion, pour des trajets plus longs
+    et plus mémorables.
+  shop_bike: Boutique Cycliste d'Exception
+  explore_our_shop: Explorez notre boutique Bikepoint, soigneusement sélectionnée pour les amateurs de vélo exigeants. Des
+    équipements de pointe aux accessoires stylés, trouvez tout ce dont vous avez besoin pour pimenter vos
+    sorties et rouler avec style.
+  trade_barter: Échangez, Troquez, Pédalez Ensemble
+  immerse_yourself_in_a_bartering_experience: Plongez dans une expérience de troc unique réservée aux passionnés de cyclisme. Échangez des
+    équipements, partagez des astuces et créez des liens avec d'autres mordus de vélo. Bikepoint fait du
+    partage une aventure à part entière.
+  do_not_miss: Ne ratez pas l'aventure. Ne ratez pas Bikepoint.
+
+action:
+  login: Se connecter

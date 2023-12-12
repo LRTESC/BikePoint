@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <img class="photo-velo" src="{{ asset('build/app-images/photo_velo.jpg') }}" alt="photoVelo"><br><br>
+
+    <h2>{{ 'message.welcome'|trans }}</h2><br>
+    <p>{{ 'message.guide'|trans }}</p><br>
+    <p>{{ 'message.explore_the_world'|trans }}</p><br>
+    <p>{{ 'message.stay_connected'|trans }}</p><br>
+
+    <div class="home-content text-center">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <div class="col"><i class="fa-solid fa-person-biking"></i>
+                <h4>{{ 'message.exciting_community'|trans }}</h4>
+                <div style="text-align: justify">{{ 'message.join_the_community'|trans }}</div>
+            </div>
+            <div class="col"><i class="fa-brands fa-nutritionix"></i>
+                <h4>{{ 'message.nutrition_advice'|trans }}</h4>
+                <div style="text-align: justify">{{ 'message.optimise_your_performance'|trans }}</div>
+            </div>
+            <div class="col"><i class="fa-solid fa-cart-shopping"></i>
+                <h4>{{ 'message.shop_bike'|trans }}</h4><br>
+                <div style="text-align: justify">{{ 'message.explore_our_shop'|trans }}</div>
+            </div>
+            <div class="col"><i class="fa-solid fa-comment"></i>
+                <h4>{{ 'message.trade_barter'|trans }}</h4>
+                <div style="text-align: justify">{{ 'message.immerse_yourself_in_a_bartering_experience'|trans }}</div>
+            </div>
+        </div>
+    </div><br><br>
+    <h5>{{ 'message.do_not_miss'|trans}}</h5>
+{% endblock %}
