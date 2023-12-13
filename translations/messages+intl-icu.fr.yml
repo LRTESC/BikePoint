@@ -44,3 +44,4 @@ message:
 
 action:
   login: Se connecter
+  logout: Déconnexion

@@ -15,7 +15,11 @@
     <section>
         <div class="app-brand">
             <img class="logo-bike" src="{{ asset('build/app-images/logo_velo.png') }}" alt="logoVelo">
-            <button type="button" class="btn btn-secondary btn-sm">{{ 'action.login'|trans }}</button>
+            {% if app.user %}
+                <a href="{{ path('app_logout') }}" role="button" class="btn btn-secondary btn-sm">{{ 'action.logout'|trans }}</a>
+            {% else %}
+                <a href="{{ path('app_login') }}" role="button" class="btn btn-secondary btn-sm">{{ 'action.login'|trans }}</a>
+            {% endif %}
             <h1>{{ 'title.bikepoint_brand'|trans }}</h1>
             <a href="{{ path('homepage') }}">
                 <img class="logo-etoile" src="{{ asset('build/app-images/logo_etoile.png') }}" alt="logoEtoile"></a>
