@@ -36,6 +36,7 @@
 </nav>
 <div id="content" class="content-fluid">
     {% block body %}{% endblock %}
+    {% include 'flash.html.twig' %}
     <a href="{{ path('homepage') }}">
         <img class="logo-strava" src="{{ asset('build/app-images/logo_strava.png') }}"
              alt="logoStrava"></a>
