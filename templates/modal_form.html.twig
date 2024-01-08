@@ -1,0 +1,18 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+<div class="modal-header">
+    <h3 class="modal-title">{{ user.id ? 'title.edit-user'|trans : 'title.add_new_user'|trans }}</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+{{ form_start_ajax(form, {'ajax_options': {'update': '#my_modal .modal-content'}}) }}
+<div class="modal-body">
+    {% include 'flash.html.twig' %}
+
+    {{ form_errors(form) }}
+    {{ form_widget(form) }}
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary">{{ user.id ? 'action.save'|trans : 'action.add'|trans }}</button>
+</div>
+{{ form_end(form) }}

@@ -13,4 +13,7 @@ return [
     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
     Ecommit\DoctrineEntitiesGeneratorBundle\EcommitDoctrineEntitiesGeneratorBundle::class => ['dev' => true, 'test' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
+    Ecommit\CrudBundle\EcommitCrudBundle::class => ['all' => true],
+    Symfony\UX\Translator\UxTranslatorBundle::class => ['all' => true],
+    Symfony\UX\StimulusBundle\StimulusBundle::class => ['all' => true],
 ];

@@ -15,5 +15,10 @@
         <li class="nav-item">
             <a class="nav-link" href="#">{{ 'menu.trade'|trans }}</a>
         </li>
+        {% if is_granted('ROLE_USER_MANAGER') %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('user_admin_list') }}">{{ 'menu.user_management'|trans }}</a>
+            </li>
+        {% endif %}
     </nav>
 </nav>

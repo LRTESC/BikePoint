@@ -1,16 +1,25 @@
-/*
- * Welcome to your app's main JavaScript file!
- *
- * We recommend including the built version of this JavaScript file
- * (and its CSS file) in your base layout (base.html.twig).
- */
-
-// any CSS you import will output into a single css file (app.css in this case)
+import './bootstrap.js';
 import './styles/app.css';
 import 'bootstrap';
+import '@ecommit/crud-bundle/js/crud';
+import * as modalManager from '@ecommit/crud-bundle/js/modal/modal-manager';
+import * as ajax from '@ecommit/crud-bundle/js/ajax';
+import {
+    trans,
+    MESSAGE_DO_YOU_REALLY_WANT_TO_DELETE_THE_USER,
+} from './translator';
 
-//import laurent from './images/laurent.jpeg';
+var modalEngine = require('@ecommit/crud-bundle/js/modal/engine/bootstrap5');
+modalManager.defineEngine(modalEngine);
 
-//const monImage = `<img src="${laurent}" alt="ACME logo">`;
+document.addEventListener('click', (event) => {
+    if (event.target.closest('.confirm-delete')) {
+        event.preventDefault();
 
-//document.querySelector('#mon_image').innerHTML = monImage;
+        if (confirm(trans(MESSAGE_DO_YOU_REALLY_WANT_TO_DELETE_THE_USER))) {
+             ajax.link(event.target.closest('.confirm-delete'), {
+                'update': '#crud_list',
+            });
+        }
+    }
+});

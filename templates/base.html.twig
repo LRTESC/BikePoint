@@ -8,6 +8,7 @@
           viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
     {% block stylesheets %}{% endblock %}
     {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_script_tags('app') }}
     {% block javascripts %}{% endblock %}
 </head>
 <body>
@@ -16,9 +17,9 @@
         <div class="app-brand">
             <img class="logo-bike" src="{{ asset('build/app-images/logo_velo.png') }}" alt="logoVelo">
             {% if app.user %}
-                <a href="{{ path('app_logout') }}" role="button" class="btn btn-secondary btn-sm">{{ 'action.logout'|trans }}</a>
+                <a href="{{ path('app_logout') }}" role="button" class="btn btn-secondary btn-sm" id="connect">{{ 'action.logout'|trans }}</a>
             {% else %}
-                <a href="{{ path('app_login') }}" role="button" class="btn btn-secondary btn-sm">{{ 'action.login'|trans }}</a>
+                <a href="{{ path('app_login') }}" role="button" class="btn btn-secondary btn-sm" id="connect">{{ 'action.login'|trans }}</a>
             {% endif %}
             <h1>{{ 'title.bikepoint_brand'|trans }}</h1>
             <a href="{{ path('homepage') }}">
@@ -46,5 +47,11 @@
                                                 src="{{ asset('build/app-images/logo_strava.png') }}"
                                                 alt="logoStrava"> {{ 'now'|date('Y') }}
 </footer>
+<div id="my_modal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
 </body>
 </html>

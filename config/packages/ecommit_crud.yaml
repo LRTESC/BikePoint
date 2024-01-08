@@ -1,0 +1,3 @@
+ecommit_crud:
+  theme: '@EcommitCrud/Theme/bootstrap5.html.twig'
+  icon_theme: '@EcommitCrud/IconTheme/fontawesome6_solid.html.twig'

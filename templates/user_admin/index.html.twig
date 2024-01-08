@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item active">{{ 'menu.user_management'|trans }}</li>
+{% endblock %}
+
+{% block body %}
+    <div class="title-user-management">
+        <h3><b>{{ 'title.user_management'|trans }}</b></h3><br> </div>
+        <div class="container-actions-buttons float-end">
+            <a href="{{ path('user_admin_ajax_create') }}" role="button" data-ec-crud-toggle="remote-modal"
+               data-ec-crud-modal-element="#my_modal"
+               data-ec-crud-modal-element-content="#my_modal .modal-content" class="btn btn-success btn-sm"><i
+                        class="fa-solid fa-circle-plus fa-xl"></i> {{ 'action.add'|trans }}</a>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div id="crud_list">
+        {% include 'user_admin/list.html.twig' %}
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+parameters:
+    ignoreErrors:
+        # En attendant que EcommitCrudBundle soit réglé
+        -
+            message: '#getCrudOptions\(\) return type has no value type specified in iterable type array#'
+        -
+            message: '#Property .+ type mapping mismatch: (property|database) can contain .+ but (property|database) expects .+#'
+            path: 'src/Entity/'

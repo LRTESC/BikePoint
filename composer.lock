@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a8d5d5fd31e46549db2c44d845cc651",
+    "content-hash": "1825e29a73d68b0f98177162baeba1e4",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -1328,6 +1328,269 @@
                 "source": "https://github.com/doctrine/sql-formatter/tree/1.1.3"
             },
             "time": "2022-05-23T21:33:49+00:00"
+        },
+        {
+            "name": "ecommit/crud-bundle",
+            "version": "3.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/e-commit/EcommitCrudBundle.git",
+                "reference": "bb13c581b94f611a1e3154f7acf8717f6fb2fabe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/e-commit/EcommitCrudBundle/zipball/bb13c581b94f611a1e3154f7acf8717f6fb2fabe",
+                "reference": "bb13c581b94f611a1e3154f7acf8717f6fb2fabe",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/collections": "^1.5|^2.0",
+                "doctrine/dbal": "^2.13.1|^3.2",
+                "doctrine/doctrine-bundle": "^2.4.5",
+                "doctrine/orm": "^2.9",
+                "doctrine/persistence": "^1.3|^2.0|^3.0",
+                "ecommit/doctrine-utils": "^1.0",
+                "ecommit/paginator": "^1.0",
+                "ecommit/scalar-values": "^1.0",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^8.1",
+                "psr/container": "^1.1|^2.0",
+                "symfony/asset": "^5.4|^6.0",
+                "symfony/config": "^5.4|^6.0",
+                "symfony/dependency-injection": "^5.4|^6.0",
+                "symfony/doctrine-bridge": "^5.4.3|^6.0.3",
+                "symfony/form": "^5.4|^6.0",
+                "symfony/framework-bundle": "^5.4|^6.0",
+                "symfony/http-client": "^5.4|^6.0",
+                "symfony/http-client-contracts": "^2.4|^3.0",
+                "symfony/http-foundation": "^5.4|^6.0",
+                "symfony/http-kernel": "^5.4|^6.0",
+                "symfony/intl": "^5.4|^6.0",
+                "symfony/options-resolver": "^5.4|^6.0",
+                "symfony/property-access": "^5.4|^6.0",
+                "symfony/routing": "^5.4|^6.0",
+                "symfony/security-bundle": "^5.4|^6.0",
+                "symfony/security-core": "^5.4|^6.0",
+                "symfony/security-csrf": "^5.4|^6.0",
+                "symfony/service-contracts": "^1.1.6|^2|^3",
+                "symfony/translation": "^5.4|^6.0",
+                "symfony/translation-contracts": "^2.3|^3.0",
+                "symfony/twig-bridge": "^5.4|^6.0",
+                "symfony/twig-bundle": "^5.4|^6.0",
+                "symfony/validator": "^5.4|^6.0",
+                "twig/twig": "^2.12.0|^3.0"
+            },
+            "require-dev": {
+                "dbrekelmans/bdi": "^1.0",
+                "dg/bypass-finals": "^1.3",
+                "doctrine/doctrine-fixtures-bundle": "^3.3",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpunit/phpunit": "^9.0",
+                "symfony/dom-crawler": "^5.4|^6.0",
+                "symfony/panther": "^2.0.1",
+                "symfony/webpack-encore-bundle": "^1.7.3",
+                "symfony/yaml": "^5.4|^6.0",
+                "vimeo/psalm": "^4.22"
+            },
+            "default-branch": true,
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Ecommit\\CrudBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hubert Lecorche",
+                    "email": "contact@e-commit.fr"
+                }
+            ],
+            "description": "EcommitCrudBundle",
+            "support": {
+                "issues": "https://github.com/e-commit/EcommitCrudBundle/issues",
+                "source": "https://github.com/e-commit/EcommitCrudBundle/tree/3.0"
+            },
+            "time": "2023-09-19T13:56:34+00:00"
+        },
+        {
+            "name": "ecommit/doctrine-utils",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/e-commit/doctrine-utils.git",
+                "reference": "11f190074ea999ac2c14932e43bef02aefcaddd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/e-commit/doctrine-utils/zipball/11f190074ea999ac2c14932e43bef02aefcaddd6",
+                "reference": "11f190074ea999ac2c14932e43bef02aefcaddd6",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.11.0|^3.0",
+                "ecommit/paginator": "^1.0",
+                "php": "^8.0",
+                "symfony/options-resolver": "^4.4|^5.4|^6.0"
+            },
+            "conflict": {
+                "doctrine/orm": "<2.12.0 || >=3.0.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "*",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpunit": "^9.3",
+                "symfony/cache": "*"
+            },
+            "suggest": {
+                "doctrine/orm": "Doctrine ORM"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ecommit\\DoctrineUtils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hubert Lecorche",
+                    "email": "contact@e-commit.fr"
+                }
+            ],
+            "description": "Doctrine utils.",
+            "keywords": [
+                "doctrine",
+                "filters",
+                "paginator"
+            ],
+            "support": {
+                "issues": "https://github.com/e-commit/doctrine-utils/issues",
+                "source": "https://github.com/e-commit/doctrine-utils/tree/v1.0.1"
+            },
+            "time": "2023-01-15T18:12:24+00:00"
+        },
+        {
+            "name": "ecommit/paginator",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/e-commit/paginator.git",
+                "reference": "23115bcf9f51460cd216e4bca33e3b069e4c8ed7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/e-commit/paginator/zipball/23115bcf9f51460cd216e4bca33e3b069e4c8ed7",
+                "reference": "23115bcf9f51460cd216e4bca33e3b069e4c8ed7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0",
+                "symfony/options-resolver": "^4.4|^5.4|^6.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ecommit\\Paginator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hubert Lecorche",
+                    "email": "contact@e-commit.fr"
+                }
+            ],
+            "description": "Create a paginator.",
+            "keywords": [
+                "array",
+                "paginator"
+            ],
+            "support": {
+                "issues": "https://github.com/e-commit/paginator/issues",
+                "source": "https://github.com/e-commit/paginator/tree/v1.0.1"
+            },
+            "time": "2023-01-08T12:06:50+00:00"
+        },
+        {
+            "name": "ecommit/scalar-values",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/e-commit/scalar-values.git",
+                "reference": "37d587ef8e65f2b445ab39801e5c5b200d9ff39f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/e-commit/scalar-values/zipball/37d587ef8e65f2b445ab39801e5c5b200d9ff39f",
+                "reference": "37d587ef8e65f2b445ab39801e5c5b200d9ff39f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ecommit\\ScalarValues\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hubert Lecorche",
+                    "email": "contact@e-commit.fr"
+                }
+            ],
+            "description": "Test scalar values.",
+            "keywords": [
+                "scalar",
+                "values"
+            ],
+            "support": {
+                "issues": "https://github.com/e-commit/scalar-values/issues",
+                "source": "https://github.com/e-commit/scalar-values/tree/v1.1.0"
+            },
+            "time": "2023-01-08T11:49:54+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -6111,6 +6374,75 @@
             "time": "2023-07-30T20:28:31+00:00"
         },
         {
+            "name": "symfony/stimulus-bundle",
+            "version": "v2.13.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/stimulus-bundle.git",
+                "reference": "40a4416e6d8da7deb18a75bb9b8e7ce955cf653d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/stimulus-bundle/zipball/40a4416e6d8da7deb18a75bb9b8e7ce955cf653d",
+                "reference": "40a4416e6d8da7deb18a75bb9b8e7ce955cf653d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/config": "^5.4|^6.0|^7.0",
+                "symfony/dependency-injection": "^5.4|^6.0|^7.0",
+                "symfony/deprecation-contracts": "^2.0|^3.0",
+                "symfony/finder": "^5.4|^6.0|^7.0",
+                "symfony/http-kernel": "^5.4|^6.0|^7.0",
+                "twig/twig": "^2.15.3|^3.4.3"
+            },
+            "require-dev": {
+                "symfony/asset-mapper": "^6.3|^7.0",
+                "symfony/framework-bundle": "^5.4|^6.0|^7.0",
+                "symfony/phpunit-bridge": "^5.4|^6.0|^7.0",
+                "symfony/twig-bundle": "^5.4|^6.0|^7.0",
+                "zenstruck/browser": "^1.4"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\StimulusBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Integration with your Symfony app & Stimulus!",
+            "keywords": [
+                "symfony-ux"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/stimulus-bundle/tree/v2.13.3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-11-30T20:29:09+00:00"
+        },
+        {
             "name": "symfony/stopwatch",
             "version": "v6.3.0",
             "source": {
@@ -6623,6 +6955,82 @@
                 }
             ],
             "time": "2023-10-31T08:07:48+00:00"
+        },
+        {
+            "name": "symfony/ux-translator",
+            "version": "v2.13.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/ux-translator.git",
+                "reference": "d6ecd457de290b3e6dd6ca0c939fc7174db2540b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/ux-translator/zipball/d6ecd457de290b3e6dd6ca0c939fc7174db2540b",
+                "reference": "d6ecd457de290b3e6dd6ca0c939fc7174db2540b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/console": "^5.4|^6.0|^7.0",
+                "symfony/filesystem": "^5.4|^6.0|^7.0",
+                "symfony/string": "^5.4|^6.0|^7.0",
+                "symfony/translation": "^5.4|^6.0|^7.0"
+            },
+            "require-dev": {
+                "symfony/framework-bundle": "^5.4|^6.0|^7.0",
+                "symfony/phpunit-bridge": "^5.2|^6.0|^7.0",
+                "symfony/var-dumper": "^5.4|^6.0|^7.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "thanks": {
+                    "name": "symfony/ux",
+                    "url": "https://github.com/symfony/ux"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\UX\\Translator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hugo Alliaume",
+                    "email": "hugo@alliau.me"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Exposes Symfony Translations directly to JavaScript.",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "symfony-ux"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/ux-translator/tree/v2.13.2"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-11-11T01:20:31+00:00"
         },
         {
             "name": "symfony/validator",
@@ -8177,6 +8585,76 @@
                 }
             ],
             "time": "2023-11-21T16:30:46+00:00"
+        },
+        {
+            "name": "phpstan/phpstan-doctrine",
+            "version": "1.3.53",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan-doctrine.git",
+                "reference": "85def57e5db6ac6c8a512200c0cfadf7b6621b10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan-doctrine/zipball/85def57e5db6ac6c8a512200c0cfadf7b6621b10",
+                "reference": "85def57e5db6ac6c8a512200c0cfadf7b6621b10",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0",
+                "phpstan/phpstan": "^1.10.12"
+            },
+            "conflict": {
+                "doctrine/collections": "<1.0",
+                "doctrine/common": "<2.7",
+                "doctrine/mongodb-odm": "<1.2",
+                "doctrine/orm": "<2.5",
+                "doctrine/persistence": "<1.3"
+            },
+            "require-dev": {
+                "composer/semver": "^3.3.2",
+                "doctrine/annotations": "^1.11.0",
+                "doctrine/collections": "^1.6",
+                "doctrine/common": "^2.7 || ^3.0",
+                "doctrine/dbal": "^2.13.8 || ^3.3.3",
+                "doctrine/lexer": "^1.2.1",
+                "doctrine/mongodb-odm": "^1.3 || ^2.1",
+                "doctrine/orm": "^2.11.0",
+                "doctrine/persistence": "^1.3.8 || ^2.2.1",
+                "gedmo/doctrine-extensions": "^3.8",
+                "nesbot/carbon": "^2.49",
+                "nikic/php-parser": "^4.13.2",
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpstan/phpstan-phpunit": "^1.3.13",
+                "phpstan/phpstan-strict-rules": "^1.5.1",
+                "phpunit/phpunit": "^9.5.10",
+                "ramsey/uuid-doctrine": "^1.5.0",
+                "symfony/cache": "^4.4.35"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "extension.neon",
+                        "rules.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Doctrine extensions for PHPStan",
+            "support": {
+                "issues": "https://github.com/phpstan/phpstan-doctrine/issues",
+                "source": "https://github.com/phpstan/phpstan-doctrine/tree/1.3.53"
+            },
+            "time": "2023-11-21T10:31:58+00:00"
         },
         {
             "name": "phpstan/phpstan-symfony",
@@ -10217,7 +10695,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ecommit/crud-bundle": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

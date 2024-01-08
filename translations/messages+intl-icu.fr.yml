@@ -1,12 +1,29 @@
 label:
   brand: Marque
   country_code: Code pays
+  city: Ville
   name: Nom
+  id: Id
+  firstname: Prénom
+  lastname: Nom
+  birth_date: Date de naissance
+  email: Email
+  created_at: Date de création
+  enabled: Activée
+  action: Action
+  plain_password: Mot de passe
+  plain_password_confirm: Confirmez mot de passe
+  yes: Oui
+  no: Non
+  roles: Autorisation d'accés
 
 title:
   bikepoint: Bikepoint | Remplissez vos gourdes
   bikepoint_brand: BikePoint
   sponsored_by: sponsorisé par Strava
+  user_management: Gestion des utilisateurs
+  edit-user: Édition d'utilisateur
+  add_new_user: Ajout d'un nouvel utilisateur
 
 menu:
   home: Accueil
@@ -14,6 +31,7 @@ menu:
   point: Localisation
   advice: Conseil
   trade: Troc / Articles
+  user_management: Gestion des utilisateurs
 
 message:
   list_course: Liste parcours
@@ -41,7 +59,29 @@ message:
     équipements, partagez des astuces et créez des liens avec d'autres mordus de vélo. Bikepoint fait du
     partage une aventure à part entière.
   do_not_miss: Ne ratez pas l'aventure. Ne ratez pas Bikepoint.
+  confirmation_of_deletion: Confirmation de suppression
+  do_you_really_want_to_delete_the_user: Voulez-vous vraiment supprimer l'utilisateur ?
+  user_confirm_delete: L'utilisateur a bien été supprimé !
+  not_delete: Pas de suppression d'utilisateur
+  add_success_user: L'utilisateur a été ajouté avec succès !
 
 action:
   login: Se connecter
   logout: Déconnexion
+  cancel: Annuler
+  delete: Supprimer
+  save: Sauvegarder
+  add: Ajouter
+  create_account: Je crée un compte
+
+pagination_count_results: >
+  {count, plural,
+      =0    {Pas de résultat}
+      one   {1 résultat trouvé}
+      other {# résultats trouvés}
+  }
+pagination_indices: Résultats {first}-{last}
+pagination_pages: Page {page}/{lastPage}
+
+role:
+  user_manager: Gestion des utilisateurs

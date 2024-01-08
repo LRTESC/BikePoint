@@ -6,5 +6,7 @@ parameters:
     paths:
         - src
         - tests
+    doctrine:
+        objectManagerLoader: tests/object-manager.php
     symfony:
         containerXmlPath: var/cache/dev/App_KernelDevDebugContainer.xml

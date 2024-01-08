@@ -1,0 +1,51 @@
+{% include 'flash.html.twig' %}
+
+{% if crud.paginator %}
+    <div>
+        <table class="table table-success table-striped">
+            <thead>
+            <tr>
+                {{ crud_th('id', crud) }}
+                {{ crud_th('firstName', crud) }}
+                {{ crud_th('lastName', crud) }}
+                {{ crud_th('birthDate', crud) }}
+                {{ crud_th('email', crud) }}
+                {{ crud_th('createdAt', crud) }}
+                {{ crud_th('enabled', crud) }}
+                <th>{{ 'label.action'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in crud.paginator %}
+                <tr>
+                    {{ crud_td('id', crud, user.id) }}
+                    {{ crud_td('firstName', crud, user.firstname) }}
+                    {{ crud_td('lastName', crud, user.lastname) }}
+                    {{ crud_td('birthDate', crud, user.birthDate|date('d/m/Y')) }}
+                    {{ crud_td('email', crud, user.email) }}
+                    {{ crud_td('createdAt', crud, user.createdAt|date('d/m/Y || H:i:s')) }}
+                    {{ crud_td('enabled', crud, ((user.enabled) ? 'label.yes' : 'label.no')|trans) }}
+                    <td>
+                        <a href="{{ path('user_admin_ajax_edit', {'id': user.id}) }}" data-ec-crud-toggle="remote-modal"
+                           data-ec-crud-modal-element="#my_modal"
+                           data-ec-crud-modal-element-content="#my_modal .modal-content"><i
+                                    class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{{ path('user_admin_ajax_delete', {'id': user.id}) }}" class="confirm-delete"><i
+                                    class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="info-pagination">
+        {{ 'pagination_count_results'|trans({'count': crud.paginator.count}) }}<br/>
+        {{ 'pagination_indices'|trans({'first': crud.paginator.firstIndice, 'last': crud.paginator.lastIndice}) }}<br/>
+        {{ 'pagination_pages'|trans({'page': crud.paginator.page, 'lastPage': crud.paginator.lastPage}) }}
+    </div>
+
+    {{ crud_paginator_links(crud) }}
+{% endif %}
+
+{{ crud_display_settings(crud) }}

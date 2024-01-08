@@ -7,3 +7,18 @@ controllers:
 app_logout:
     path: /logout
     methods: GET
+
+users_admin_list:
+    path: '/users/admin/list'
+    controller: 'App\Controller\UserAdminController::listAction'
+
+users_admin_ajax_list:
+    path: '/users/admin/ajax/list'
+    controller: 'App\Controller\UserAdminController::ajaxCrudAction'
+
+create_user:
+    path: '/users/admin/create'
+    controller: 'App\Controller\UserAdminController::createlistAction'
+    methods: ['GET']
+    requirements:
+        _permission: 'create_user'

@@ -35,6 +35,9 @@
             "migrations/.gitignore"
         ]
     },
+    "ecommit/crud-bundle": {
+        "version": "3.0.x-dev"
+    },
     "ecommit/doctrine-entities-generator-bundle": {
         "version": "v1.1.1"
     },
@@ -228,6 +231,20 @@
             "config/packages/security.yaml"
         ]
     },
+    "symfony/stimulus-bundle": {
+        "version": "2.13",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.9",
+            "ref": "05c45071c7ecacc1e48f94bc43c1f8d4405fb2b2"
+        },
+        "files": [
+            "assets/bootstrap.js",
+            "assets/controllers.json",
+            "assets/controllers/hello_controller.js"
+        ]
+    },
     "symfony/translation": {
         "version": "6.3",
         "recipe": {
@@ -252,6 +269,21 @@
         "files": [
             "config/packages/twig.yaml",
             "templates/base.html.twig"
+        ]
+    },
+    "symfony/ux-translator": {
+        "version": "2.13",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.9",
+            "ref": "bc396565cc4cab95692dd6df810553dc22e352e1"
+        },
+        "files": [
+            "assets/translator.js",
+            "config/packages/ux_translator.yaml",
+            "var/translations/configuration.js",
+            "var/translations/index.js"
         ]
     },
     "symfony/validator": {

@@ -7,14 +7,16 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Event\PrePersistEventArgs;
 use Doctrine\ORM\Mapping as ORM;
+use Ecommit\CrudBundle\Entity\UserCrudInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\HasLifecycleCallbacks]
-#[ORM\UniqueConstraint(columns: ['email'])]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+#[UniqueEntity(fields: ['email'])]
+class User implements UserInterface, PasswordAuthenticatedUserInterface, UserCrudInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -23,29 +25,33 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 70)]
     #[Assert\NotBlank]
-    #[Assert\Length(min: 20, max: 70)]
+    #[Assert\Length(min: 2, max: 70)]
     private ?string $firstName = null;
 
     #[ORM\Column(type: 'string', length: 70)]
     #[Assert\NotBlank]
-    #[Assert\Length(min: 20, max: 70)]
-    private ?string $username = null;
+    #[Assert\Length(min: 2, max: 70)]
+    private ?string $lastName = null;
 
     #[ORM\Column(type: 'string', length: 255, unique: true)]
     #[Assert\NotBlank]
     #[Assert\Length(min: 2, max: 255)]
-    #[Assert\Email(message: 'The email {{ value }} is not a valid email.', )]
+    #[Assert\Email(message: 'L\'email {{ value }} n\'est pas un email valide.', )]
     private ?string $email = null;
 
     #[ORM\Column(type: 'string', length: 100)]
     private ?string $password = null;
+
+    #[Assert\NotBlank(groups: ['EditUser'])]
+    #[Assert\PasswordStrength(minScore: Assert\PasswordStrength::STRENGTH_MEDIUM, groups: ['EditUser'])]
+    #[Assert\Length(min: 12, max: 4096, groups: ['EditUser'])]
+    public ?string $plainPassword = null;
 
     #[ORM\Column(type: 'date')]
     #[Assert\NotBlank]
     private ?\DateTime $birthDate = null;
 
     #[ORM\Column(type: 'datetime')]
-    #[Assert\NotBlank]
     private ?\DateTime $createdAt = null;
 
     #[ORM\Column(type: 'boolean')]
@@ -55,7 +61,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string[]
      */
     #[ORM\Column(type: 'json')]
-    #[Assert\NotBlank]
     protected ?array $roles = [];
 
     /*
@@ -68,6 +73,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $roles[] = 'ROLE_USER';
 
         return $roles;
+    }
+
+    /**
+     * @return string[]
+     */
+    public static function getAvailableRoles(): array
+    {
+        return [
+            'ROLE_USER_MANAGER' => 'role.user_manager',
+        ];
     }
 
     public function eraseCredentials(): void
@@ -127,16 +142,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->firstName;
     }
 
-    public function setUsername(?string $username): self
+    public function setLastName(?string $lastName): self
     {
-        $this->username = $username;
+        $this->lastName = $lastName;
 
         return $this;
     }
 
-    public function getUsername(): ?string
+    public function getLastName(): ?string
     {
-        return $this->username;
+        return $this->lastName;
     }
 
     public function setEmail(?string $email): self
