@@ -17,9 +17,13 @@
         <div class="app-brand">
             <img class="logo-bike" src="{{ asset('build/app-images/logo_velo.png') }}" alt="logoVelo">
             {% if app.user %}
-                <a href="{{ path('app_logout') }}" role="button" class="btn btn-secondary btn-sm" id="connect">{{ 'action.logout'|trans }}</a>
+                <a href="{{ path('app_logout') }}" role="button" class="btn btn-secondary btn-sm"
+                   id="connect">{{ 'action.logout'|trans }}</a>
             {% else %}
-                <a href="{{ path('app_login') }}" role="button" class="btn btn-secondary btn-sm" id="connect">{{ 'action.login'|trans }}</a>
+                <a href="{{ path('app_login') }}" role="button" class="btn btn-secondary btn-sm"
+                   id="connect">{{ 'action.login'|trans }}</a>
+                <a href="{{ path('app_register') }}" role="button" class="btn btn-secondary btn-sm"
+                   id="connect-account">{{ 'action.create_account'|trans }}</a>
             {% endif %}
             <h1>{{ 'title.bikepoint_brand'|trans }}</h1>
             <a href="{{ path('homepage') }}">
@@ -27,6 +31,7 @@
         </div>
     </section>
     {% include 'menu.html.twig' %}
+    {% include 'flash.html.twig' %}
 </header>
 <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -37,15 +42,15 @@
 </nav>
 <div id="content" class="content-fluid">
     {% block body %}{% endblock %}
-    {% include 'flash.html.twig' %}
+
     <a href="{{ path('homepage') }}">
         <img class="logo-strava" src="{{ asset('build/app-images/logo_strava.png') }}"
              alt="logoStrava"></a>
 </div>
 <footer class="copy">
     {{ 'message.footer_copyright'|trans }} {{ 'title.sponsored_by'|trans }}<img class="logo-strava-footer"
-                                                src="{{ asset('build/app-images/logo_strava.png') }}"
-                                                alt="logoStrava"> {{ 'now'|date('Y') }}
+                                                                                src="{{ asset('build/app-images/logo_strava.png') }}"
+                                                                                alt="logoStrava"> {{ 'now'|date('Y') }}
 </footer>
 <div id="my_modal" class="modal" tabindex="-1">
     <div class="modal-dialog modal-lg">

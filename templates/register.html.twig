@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+    <form action="{{ path('users_ajax_create') }}" method="post">
+        {{ form_row(form.firstName) }}
+        {{ form_row(form.lastName) }}
+        {{ form_row(form.birthDate) }}
+        {{ form_row(form.city, {'attr': {'class': 'hidden-field'}, 'label_attr': {'class': 'hidden-field'}}) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.plainPassword.first) }}
+        {{ form_row(form.plainPassword.second) }}
+
+        {{ form_rest(form) }}
+
+        <button type="submit">{{ 'action.create_account'|trans }}</button>
+    </form>
+{% endblock %}

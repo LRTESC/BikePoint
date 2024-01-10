@@ -36,7 +36,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, UserCru
     #[ORM\Column(type: 'string', length: 255, unique: true)]
     #[Assert\NotBlank]
     #[Assert\Length(min: 2, max: 255)]
-    #[Assert\Email(message: 'L\'email {{ value }} n\'est pas un email valide.', )]
+    #[Assert\Email]
     private ?string $email = null;
 
     #[ORM\Column(type: 'string', length: 100)]

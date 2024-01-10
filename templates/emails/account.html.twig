@@ -1,0 +1,21 @@
+<p>
+    <img src="{{ absolute_url(asset('build/app-images/logo_velo.png')) }}" alt="Logo Velo">
+</p>
+<h1>Votre compte a été créé avec succès.</h1>
+<h2>Bienvenue {{ user.firstName }} !</h2>
+<p>
+    Merci pour votre inscription sur notre site Bikepoint.
+</p>
+<p>
+    Pour activer votre compte, veuillez cliquer sur le lien suivant :
+    <a href="{{ url('app_login') }}">Cliquez ici pour activer votre compte</a>
+</p>
+<p>
+    Si le lien ci-dessus ne fonctionne pas, veuillez copier et coller l'URL suivante dans votre navigateur :
+    <code>{{ url('app_login') }}</code>
+</p>
+<p>
+    Remplissez vos gourdes,<br>
+    Cordialement,<br>
+    L'équipe Bikepoint.
+</p>

@@ -22,3 +22,8 @@ create_user:
     methods: ['GET']
     requirements:
         _permission: 'create_user'
+
+app_register:
+    path: /register
+    methods: GET
+    
