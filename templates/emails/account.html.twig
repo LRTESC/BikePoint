@@ -1,21 +1,22 @@
 <p>
     <img src="{{ absolute_url(asset('build/app-images/logo_velo.png')) }}" alt="Logo Velo">
 </p>
-<h1>Votre compte a été créé avec succès.</h1>
-<h2>Bienvenue {{ user.firstName }} !</h2>
+<h1>{{'message.your_account_has_been_created_successfully'|trans}}</h1>
+<h2>{{'message.welcome_account'|trans}} {{ user.firstName }} !</h2>
 <p>
-    Merci pour votre inscription sur notre site Bikepoint.
+    {{'message.thank_you_for_registering_with_Bikepoint'|trans}}
 </p>
 <p>
-    Pour activer votre compte, veuillez cliquer sur le lien suivant :
-    <a href="{{ url('app_login') }}">Cliquez ici pour activer votre compte</a>
+    {{'message.to_activate_your_account_click_on_the_following_link'|trans}} :
+</p>
+    <a href="{{ url('app_login') }}">{{'message.click_here_to_activate_your_account'|trans}}</a>
 </p>
 <p>
-    Si le lien ci-dessus ne fonctionne pas, veuillez copier et coller l'URL suivante dans votre navigateur :
+    {{'message.if_the_above_link_does_not_work_please_copy_and_paste_the_following_URL_into_your_browser'|trans}} :
     <code>{{ url('app_login') }}</code>
 </p>
 <p>
-    Remplissez vos gourdes,<br>
-    Cordialement,<br>
-    L'équipe Bikepoint.
+    {{'message.fill_your_water_bottles'|trans}}<br>
+    {{'message.best_regards'|trans}}<br>
+    {{'message.the_Bikepoint_team'|trans}}
 </p>

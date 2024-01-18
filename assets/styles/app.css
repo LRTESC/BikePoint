@@ -2,12 +2,18 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 @import '~@fortawesome/fontawesome-free/css/solid';
 
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
 body {
     background-color: #A4C3B2;
     width: auto;
     min-height: 100vh;
     margin: 80px;
-    font-family: "Heebo", sans-serif;
+    font-family: "heebo", sans-serif;
 }
 
 .app-brand {
@@ -18,6 +24,7 @@ body {
 }
 
 #menu {
+    max-width: 100%;
     box-shadow: #232323 1px 1px 16px;
     margin: 1% auto;
     width: auto;
@@ -25,13 +32,6 @@ body {
     transition: 1s;
     background-color: #EAF4F4;
     border: 5px solid #A4C3B2;
-    border-radius: 30px;
-}
-
-.navbar-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     border-radius: 30px;
 }
 
@@ -143,7 +143,7 @@ a.nav-link:hover {
     right: 10px;
     top: 30px;
     margin: 80px
- }
+}
 
 #connect-account {
     position: absolute;
@@ -176,6 +176,7 @@ a.nav-link:hover {
 }
 
 .photo-velo {
+    max-width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -189,7 +190,7 @@ p, h2, h4, h5 {
 }
 
 .home-content {
-    width: auto;
+    max-width: 100%;
 }
 
 .container-actions-buttons {
@@ -201,6 +202,7 @@ p, h2, h4, h5 {
     box-shadow: #232323 8px 8px 20px;
     margin: auto;
     width: 800px;
+    max-width: 100%;
     padding: 10px 20px 10px 20px;
     transition: 1s;
     background-color: #A4C3B2;

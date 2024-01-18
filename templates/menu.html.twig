@@ -1,24 +1,32 @@
-<nav id="menu" class="container-fluid">
-    <nav class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="#">{{ 'menu.home'|trans }}</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">{{ 'menu.course'|trans }}</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">{{ 'menu.point'|trans }}</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">{{ 'menu.advice'|trans }}</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">{{ 'menu.trade'|trans }}</a>
-        </li>
-        {% if is_granted('ROLE_USER_MANAGER') %}
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('user_admin_list') }}">{{ 'menu.user_management'|trans }}</a>
-            </li>
-        {% endif %}
+<nav class="navbar navbar-expand-lg">
+    <nav id="menu" class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <nav class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{ 'menu.home'|trans }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{ 'menu.course'|trans }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{ 'menu.point'|trans }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{ 'menu.advice'|trans }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{ 'menu.trade'|trans }}</a>
+                </li>
+                {% if is_granted('ROLE_USER_MANAGER') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('user_admin_list') }}">{{ 'menu.user_management'|trans }}</a>
+                    </li>
+                {% endif %}
+            </nav>
+        </div>
     </nav>
 </nav>

@@ -4,8 +4,8 @@
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-
     <form action="{{ path('app_login') }}" method="post">
+        <h5>{{ 'title.please_log_in_to_your_bikepoint_account'|trans }}</h5><br>
         <label for="username">{{ 'label.email'|trans }}:</label>
         <input type="text" id="username" name="_username" value="{{ last_username }}">
 
