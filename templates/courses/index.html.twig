@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="{{ path('courses') }}">{{ 'menu.courses'|trans }}</a></li>
+{% endblock %}
+
+{% block body %}
+    <div class="title-user-management">
+        <h3><b>{{ 'title.my_courses'|trans }}</b></h3><br></div>
+    <div class="container-actions-buttons float-end">
+        <a href="{{ path('courses_add') }}" role="button" class="btn btn-success btn-sm"><i
+                    class="fa-solid fa-circle-plus fa-xl"></i> {{ 'action.add'|trans }}</a>
+
+        <div class="clearfix"></div>
+    </div>
+    <div id="crud_list">
+        {% include 'courses/list.html.twig' %}
+    </div>
+{% endblock %}
+
+
+

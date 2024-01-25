@@ -80,9 +80,9 @@ class Course
     #[Assert\Range(min: 2, max: 1000)]
     private ?int $negativeGradient = null;
 
-    #[ORM\Column(type: 'integer', length: 10)]
+    #[ORM\Column(type: 'integer')]
     #[Assert\NotBlank]
-    #[Assert\Range(min: 2, max: 10)]
+    #[Assert\Range(min: 2, max: 1000)]
     private ?int $minimumAltitude = null;
 
     #[ORM\Column(type: 'string', nullable: true)]

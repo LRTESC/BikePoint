@@ -17,12 +17,22 @@ label:
   no: Non
   roles: Autorisation d'accés
   hello: Bonjour
+  title: Titre
+  description: Description
+  zipCode: Code postal
+  level: Niveau de difficulté
+  distance: Kilomètres parcourus
+  positiveAscent: Ascension positive
+  maximumAltitude: Altitude maximale
+  negativeGradient: Pente négative
+  minimumAltitude: Altitude minimale
 
 title:
   bikepoint: Bikepoint | Remplissez vos gourdes
   bikepoint_brand: BikePoint
   sponsored_by: sponsorisé par Strava
   user_management: Gestion des utilisateurs
+  my_courses: Mes Parcours
   edit-user: Édition d'utilisateur
   add_new_user: Ajout d'un nouvel utilisateur
   please_log_in_to_your_bikepoint_account: Veuillez vous connecter à votre compte Bikepoint !
@@ -30,10 +40,13 @@ title:
 menu:
   home: Accueil
   course: Parcours
+  courses: Mes Parcours
+  course_add: Ajouter
   point: Localisation
   advice: Conseil
   trade: Troc / Articles
   user_management: Gestion des utilisateurs
+  edit: Modifier
 
 message:
   list_course: Liste parcours
@@ -62,8 +75,9 @@ message:
     partage une aventure à part entière.
   do_not_miss: Ne ratez pas l'aventure. Ne ratez pas Bikepoint.
   confirmation_of_deletion: Confirmation de suppression
-  do_you_really_want_to_delete_the_user: Voulez-vous vraiment supprimer l'utilisateur ?
+  do_you_really_want_to_delete_this_base: Voulez-vous vraiment supprimer cette donnée ?
   user_confirm_delete: L'utilisateur a bien été supprimé !
+  the_course_has_been_cancelled: Le parcours a bien été supprimé !
   not_delete: Pas de suppression d'utilisateur
   add_success_user: L'utilisateur a été ajouté avec succès !
   your_account_has_been_created_successfully: Votre compte a été créé avec succès.
@@ -75,6 +89,7 @@ message:
   fill_your_water_bottles:  Remplissez vos gourdes,
   best_regards: Cordialement,
   the_Bikepoint_team: L'équipe Bikepoint.
+  course_successfully_added: Parcours ajouté avec succès.
 
 action:
   login: Se connecter
@@ -85,6 +100,7 @@ action:
   add: Ajouter
   create_account: Créer un compte
   thank_you_for_registering: merci pour votre inscription !
+  add_course: Ajouter mon parcours
 
 pagination_count_results: >
   {count, plural,

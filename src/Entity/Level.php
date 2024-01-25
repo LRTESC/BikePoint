@@ -20,12 +20,20 @@ class Level
     #[ORM\Column(type: 'string', length: 70, unique: true)]
     #[Assert\NotBlank]
     #[Assert\Length(min: 10, max: 70)]
-    private ?string $username = null;
+    private ?string $name = null;
 
     #[ORM\Column(type: 'smallint')]
     #[Assert\NotBlank]
     #[Assert\Length(min: 5, max: 10)]
     private ?int $rank = null;
+
+    /*
+     * Evenements
+     */
+    public function __toString()
+    {
+        return $this->name ?? '';
+    }
 
     /*
      * Getters / Setters (auto-generated)
@@ -36,16 +44,16 @@ class Level
         return $this->id;
     }
 
-    public function setUsername(?string $username): self
+    public function setName(?string $name): self
     {
-        $this->username = $username;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getUsername(): ?string
+    public function getName(): ?string
     {
-        return $this->username;
+        return $this->name;
     }
 
     public function setRank(?int $rank): self
