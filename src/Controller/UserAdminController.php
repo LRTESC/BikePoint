@@ -83,7 +83,7 @@ class UserAdminController extends AbstractCrudController
             ]);
         }
 
-        return $this->render('modal_form.html.twig', [
+        return $this->render('user_admin/modal_form.html.twig', [
             'form' => $form->createView(),
             'user' => $user,
         ]);
@@ -110,7 +110,7 @@ class UserAdminController extends AbstractCrudController
             ]);
         }
 
-        return $this->render('modal_form.html.twig', [
+        return $this->render('user_admin/modal_form.html.twig', [
             'form' => $form->createView(),
             'user' => $user,
         ]);
