@@ -8,6 +8,7 @@
     text-decoration: none;
     list-style: none;
 }
+
 body {
     background-color: #A4C3B2;
     width: auto;
@@ -201,6 +202,7 @@ p, h2, h4, h5 {
 .title-user-management {
     box-shadow: #232323 8px 8px 20px;
     margin: auto;
+    margin-bottom: 20px;
     width: 800px;
     max-width: 100%;
     padding: 10px 20px 10px 20px;
@@ -214,4 +216,12 @@ p, h2, h4, h5 {
 
 .hidden-field {
     display: none;
+}
+
+#crud_list {
+    margin-top: 100px
+}
+
+.card {
+    border-radius: 40px;
 }

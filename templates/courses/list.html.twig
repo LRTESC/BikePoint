@@ -1,47 +1,49 @@
 {% include 'flash.html.twig' %}
 
 {% if crud.paginator %}
-    <div class="table table-responsive">
-        <table class="table table-success table-striped">
-            <thead>
-            <tr>
-                {{ crud_th('id', crud) }}
-                {{ crud_th('title', crud) }}
-                {{ crud_th('zipCode', crud) }}
-                {{ crud_th('city', crud) }}
-                {{ crud_th('level', crud) }}
-                {{ crud_th('distance', crud) }}
-                {{ crud_th('positiveAscent', crud) }}
-                {{ crud_th('maximumAltitude', crud) }}
-                {{ crud_th('negativeGradient', crud) }}
-                {{ crud_th('minimumAltitude', crud) }}
-                <th>{{ 'label.action'|trans }}</th>
-            </tr>
-            </thead>
-            <tbody>
+    <div class="row">
             {% for course in crud.paginator %}
-                <tr>
-                    {{ crud_td('id', crud, course.id) }}
-                    {{ crud_td('title', crud, course.title) }}
-                    {{ crud_td('zipCode', crud, course.zipCode) }}
-                    {{ crud_td('city', crud, course.zipCode) }}
-                    {{ crud_td('level', crud, course.level) }}
-                    {{ crud_td('distance', crud, course.distance) }}
-                    {{ crud_td('positiveAscent', crud, course.positiveAscent) }}
-                    {{ crud_td('maximumAltitude', crud, course.maximumAltitude) }}
-                    {{ crud_td('negativeGradient', crud, course.negativeGradient) }}
-                    {{ crud_td('minimumAltitude', crud, course.minimumAltitude) }}
-                    <td>
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="title-user-management">
+                        <h4 class="card-title">{{ course.title }}</h4></div>
+                    <div class="col">
+                        <strong>Code Postal:</strong> {{ course.zipCode }}
+                    </div>
+                    <div class="col">
+                        <strong>Ville:</strong> {{ course.city }}
+                    </div>
+                    <div class="col">
+                        <strong>Niveau:</strong> {{ course.level }}
+                    </div>
+                    <div class="col">
+                        <strong>Distance:</strong> {{ course.distance }}
+                    </div>
+                    <div class="col">
+                        <strong>Denivelé Positif:</strong> {{ course.positiveAscent }}
+                    </div>
+                    <div class="col">
+                        <strong>Altitude Max:</strong> {{ course.maximumAltitude }}
+                    </div>
+                    <div class="col">
+                        <strong>Pente Négative:</strong> {{ course.negativeGradient }}
+                    </div>
+                    <div class="col">
+                        <strong>Altitude Min:</strong> {{ course.minimumAltitude }}
+                    </div>
+                    <div class="text-center mt-3">
                         <a href="{{ path('courses_edit', {'id': course.id}) }}" ><i
                                     class="fa-solid fa-pen"></i></a> | |
                         <a href="{{ path('courses_ajax_delete', {'id': course.id}) }}" class="confirm-delete"><i
                                     class="fa-solid fa-trash-can"></i></a>
-                    </td>
-                </tr>
+                    </div>
+                </div>
+            </div>
+        </div>
             {% endfor %}
-            </tbody>
-        </table>
     </div>
+<div class="text-center mt-4">
 
     <div class="info-pagination">
         {{ 'pagination_count_results'|trans({'count': crud.paginator.count}) }}<br/>
@@ -51,5 +53,4 @@
 
     {{ crud_paginator_links(crud) }}
 {% endif %}
-
-{{ crud_display_settings(crud) }}
+</div>
