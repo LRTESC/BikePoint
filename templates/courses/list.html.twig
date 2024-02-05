@@ -9,28 +9,28 @@
                     <div class="title-user-management">
                         <h4 class="card-title">{{ course.title }}</h4></div>
                     <div class="col">
-                        <strong>Code Postal:</strong> {{ course.zipCode }}
+                        <strong>{{ 'label.zipCode'|trans }}:</strong> {{ course.zipCode }}
                     </div>
                     <div class="col">
-                        <strong>Ville:</strong> {{ course.city }}
+                        <strong>{{ 'label.city'|trans }}:</strong> {{ course.city }}
                     </div>
                     <div class="col">
-                        <strong>Niveau:</strong> {{ course.level }}
+                        <strong>{{ 'label.level'|trans }}:</strong> {{ course.level }}
                     </div>
                     <div class="col">
-                        <strong>Distance:</strong> {{ course.distance }}
+                        <strong>{{ 'label.distance'|trans }}:</strong> {{ course.distance }}
                     </div>
                     <div class="col">
-                        <strong>Denivelé Positif:</strong> {{ course.positiveAscent }}
+                        <strong>{{ 'label.positiveAscent'|trans }}:</strong> {{ course.positiveAscent }}
                     </div>
                     <div class="col">
-                        <strong>Altitude Max:</strong> {{ course.maximumAltitude }}
+                        <strong>{{ 'label.maximumAltitude'|trans }}:</strong> {{ course.maximumAltitude }}
                     </div>
                     <div class="col">
-                        <strong>Pente Négative:</strong> {{ course.negativeGradient }}
+                        <strong>{{ 'label.negativeGradient'|trans }}:</strong> {{ course.negativeGradient }}
                     </div>
                     <div class="col">
-                        <strong>Altitude Min:</strong> {{ course.minimumAltitude }}
+                        <strong>{{ 'label.minimumAltitude'|trans }}:</strong> {{ course.minimumAltitude }}
                     </div>
                     <div class="text-center mt-3">
                         <a href="{{ path('courses_edit', {'id': course.id}) }}" ><i
@@ -47,10 +47,13 @@
 
     <div class="info-pagination">
         {{ 'pagination_count_results'|trans({'count': crud.paginator.count}) }}<br/>
-        {{ 'pagination_indices'|trans({'first': crud.paginator.firstIndice, 'last': crud.paginator.lastIndice}) }}<br/>
-        {{ 'pagination_pages'|trans({'page': crud.paginator.page, 'lastPage': crud.paginator.lastPage}) }}
+        {{ 'pagination_indices'|trans({'first': crud.paginator.firstIndice,
+            'last': crud.paginator.lastIndice}) }}<br/>
+        {{ 'pagination_pages'|trans({'page': crud.paginator.page,
+            'lastPage': crud.paginator.lastPage}) }}
     </div>
 
     {{ crud_paginator_links(crud) }}
 {% endif %}
 </div>
+{#{{ crud_display_settings(crud) }}#}

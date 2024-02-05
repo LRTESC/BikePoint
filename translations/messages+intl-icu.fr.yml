@@ -90,6 +90,7 @@ message:
   best_regards: Cordialement,
   the_Bikepoint_team: L'équipe Bikepoint.
   course_successfully_added: Parcours ajouté avec succès.
+  course_successfuly_modified: Parcours modifié avec succès.
 
 action:
   login: Se connecter

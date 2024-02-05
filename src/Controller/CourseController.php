@@ -96,7 +96,9 @@ class CourseController extends AbstractCrudController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('courses_edit', [
+            $this->addFlash('success', 'message.course_successfuly_modified');
+
+            return $this->redirectToRoute('courses', [
                 'id' => $course->getId(),
             ]);
         }
