@@ -77,7 +77,7 @@ class CourseController extends AbstractCrudController
 
             $this->addFlash('success', 'message.course_successfully_added');
 
-            return $this->redirectToRoute('courses_add');
+            return $this->redirectToRoute('courses');
         }
 
         return $this->render('courses/form.html.twig', [

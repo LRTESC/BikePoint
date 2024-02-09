@@ -2,6 +2,7 @@
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
 
 {% block body %}
+    <h5>{{ 'title.please_fill_in_all_the_fields_to_create_your_Bikepoint_account'|trans }}</h5><br>
     <form action="{{ path('users_ajax_create') }}" method="post">
         {{ form_row(form.firstName) }}
         {{ form_row(form.lastName) }}
