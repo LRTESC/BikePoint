@@ -8,7 +8,7 @@
     <div class="title-user-management">
         <h3><b>{{ 'title.my_courses'|trans }}</b></h3><br></div>
     <div class="container-actions-buttons float-end">
-        <a href="{{ path('courses_add') }}" role="button" class="btn btn-success btn-sm"><i
+        <a href="{{ path('courses_add') }}" role="button" class="btn btn-secondary"><i
                     class="fa-solid fa-circle-plus fa-xl"></i> {{ 'action.add'|trans }}</a>
 
         <div class="clearfix"></div>
@@ -17,6 +17,3 @@
         {% include 'courses/list.html.twig' %}
     </div>
 {% endblock %}
-
-
-
