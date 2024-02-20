@@ -8,9 +8,11 @@ use App\Entity\Course;
 use App\Entity\Level;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class CourseType extends AbstractType
 {
@@ -47,6 +49,21 @@ class CourseType extends AbstractType
             ])
             ->add('minimumAltitude', TextType::class, [
                 'label' => 'label.minimumAltitude',
+            ])
+            ->add('fileMimeType', FileType::class, [
+                'label' => 'label.pictureCourse',
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'application/JPG',
+                            'application/x-JPG',
+                        ],
+                        'mimeTypesMessage' => 'Please upload a valid JPG document',
+                    ]),
+                ],
             ]);
     }
 
