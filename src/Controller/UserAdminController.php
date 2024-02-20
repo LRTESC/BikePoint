@@ -61,7 +61,7 @@ class UserAdminController extends AbstractCrudController
     }
 
     #[Route(path: '/users/admin/create', name: 'user_admin_ajax_create')]
-    public function createAction(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasher): response
+    public function createAction(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user, [
@@ -90,7 +90,7 @@ class UserAdminController extends AbstractCrudController
     }
 
     #[Route(path: '/users/admin/edit/{id}', name: 'user_admin_ajax_edit')]
-    public function editAction(EntityManagerInterface $entityManager, Request $request, User $user, UserPasswordHasherInterface $userPasswordHasher): response
+    public function editAction(EntityManagerInterface $entityManager, Request $request, User $user, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $form = $this->createForm(UserType::class, $user, [
             'action' => $this->generateUrl('user_admin_ajax_edit', [
@@ -117,7 +117,7 @@ class UserAdminController extends AbstractCrudController
     }
 
     #[Route(path: '/users/admin/delete/{id}', name: 'user_admin_ajax_delete')]
-    public function deleteAction(EntityManagerInterface $entityManager, User $user): response
+    public function deleteAction(EntityManagerInterface $entityManager, User $user): Response
     {
         try {
             $entityManager->remove($user);

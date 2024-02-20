@@ -37,7 +37,7 @@ class CourseController extends AbstractCrudController
             ->addColumn(['id' => 'negativeGradient', 'alias' => 'c.negativeGradient', 'label' => 'label.negativeGradient'])
             ->addColumn(['id' => 'minimumAltitude', 'alias' => 'c.minimumAltitude', 'label' => 'label.minimumAltitude'])
             ->setQueryBuilder($queryBuilder)
-            ->setMaxPerPage([2, 5, 10], 5)
+            ->setMaxPerPage([2, 4, 8], 5)
             ->setDefaultSort('id', Crud::ASC)
             ->setRoute('courses_ajax_list')
             ->setPersistentSettings(true);
@@ -87,7 +87,7 @@ class CourseController extends AbstractCrudController
     }
 
     #[Route(path: '/courses/edit/{id}', name: 'courses_edit')]
-    public function editAction(EntityManagerInterface $entityManager, Request $request, Course $course): response
+    public function editAction(EntityManagerInterface $entityManager, Request $request, Course $course): Response
     {
         $form = $this->createForm(CourseType::class, $course);
 
@@ -110,7 +110,7 @@ class CourseController extends AbstractCrudController
     }
 
     #[Route(path: '/courses/delete/{id}', name: 'courses_ajax_delete')]
-    public function deleteAction(EntityManagerInterface $entityManager, Course $course): response
+    public function deleteAction(EntityManagerInterface $entityManager, Course $course): Response
     {
         try {
             $entityManager->remove($course);
