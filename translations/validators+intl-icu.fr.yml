@@ -1,2 +1,3 @@
 message:
   repeat_password_not_equal: Les 2 mots de passes ne sont pas identiques
+  please_upload_a_valid_image: Veuillez télécharger une image valide

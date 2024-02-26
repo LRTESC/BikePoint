@@ -101,6 +101,15 @@ class Course
     }
 
     /*
+     * Methodes
+     */
+
+    public function hasImage(): bool
+    {
+        return null !== $this->fileMimeType;
+    }
+
+    /*
      * Getters / Setters (auto-generated)
      */
 

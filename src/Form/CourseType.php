@@ -50,7 +50,7 @@ class CourseType extends AbstractType
             ->add('minimumAltitude', TextType::class, [
                 'label' => 'label.minimumAltitude',
             ])
-            ->add('fileMimeType', FileType::class, [
+            ->add('picture', FileType::class, options: [
                 'label' => 'label.pictureCourse',
                 'mapped' => false,
                 'required' => false,
@@ -58,10 +58,10 @@ class CourseType extends AbstractType
                     new File([
                         'maxSize' => '1024k',
                         'mimeTypes' => [
-                            'application/JPG',
-                            'application/x-JPG',
+                            'image/jpeg',
+                            'image/jpg',
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid JPG document',
+                        'mimeTypesMessage' => 'message.please_upload_a_valid_image',
                     ]),
                 ],
             ]);

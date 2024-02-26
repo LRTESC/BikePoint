@@ -11,6 +11,9 @@ use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 use Doctrine\ORM\EntityManagerInterface;
 use Ecommit\CrudBundle\Controller\AbstractCrudController;
 use Ecommit\CrudBundle\Crud\Crud;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -72,8 +75,22 @@ class CourseController extends AbstractCrudController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->beginTransaction();
+            $file = $form->get('picture')->getData();
+
             $entityManager->persist($course);
             $entityManager->flush();
+
+            if ($file instanceof UploadedFile) {
+                $course->setFileMimeType($file->getMimeType());
+
+                // Enregistrement du fichier
+                $folder = $this->getParameter('kernel.project_dir').'/var/photos/';
+                $filename = $course->getId().'.data';
+                $file->move($folder, $filename);
+                $entityManager->flush();
+            }
+            $entityManager->commit();
 
             $this->addFlash('success', 'message.course_successfully_added');
 
@@ -95,6 +112,23 @@ class CourseController extends AbstractCrudController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
+            $entityManager->beginTransaction();
+            $file = $form->get('picture')->getData();
+
+            $entityManager->persist($course);
+            $entityManager->flush();
+
+            if ($file instanceof UploadedFile) {
+                $course->setFileMimeType($file->getMimeType());
+
+                // Enregistrement du fichier
+                $folder = $this->getParameter('kernel.project_dir').'/var/photos/';
+                $filename = $course->getId().'.data';
+                $file->move($folder, $filename);
+                $entityManager->flush();
+            }
+
+            $entityManager->commit();
 
             $this->addFlash('success', 'message.course_successfuly_modified');
 
@@ -107,6 +141,27 @@ class CourseController extends AbstractCrudController
             'form' => $form->createView(),
             'course' => $course,
         ]);
+    }
+
+    #[Route('/courses/image/{id}.jpg', name: 'courses_image')]
+    public function showCourseImage(int $id, EntityManagerInterface $entityManager, Filesystem $filesystem): Response
+    {
+        $course = $entityManager->getRepository(Course::class)->find($id);
+        if (!$course) {
+            throw $this->createNotFoundException('Le parcours avec l\'identifiant '.$id.' n\'existe pas.');
+        }
+        $folder = $this->getParameter('kernel.project_dir').'/var/photos/';
+        $filename = $id.'.data';
+        $filePath = $folder.$filename;
+        if ($filesystem->exists($filePath)) {
+            $file = new File($filePath);
+
+            return new Response((string) file_get_contents($filePath), 200, [
+                'Content-Type' => $file->getMimeType(),
+            ]);
+        } else {
+            throw $this->createNotFoundException();
+        }
     }
 
     #[Route(path: '/courses/delete/{id}', name: 'courses_ajax_delete')]

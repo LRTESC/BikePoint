@@ -12,15 +12,17 @@
 
 {% block body %}
     {{ form_start(form) }}
-
     {% include 'flash.html.twig' %}
-
+    {% if course.hasImage %}
+        <img src="{{ path('courses_image', {'id': course.id}) }}" alt="CourseImage">
+    {% else %}
+        <p>Pas d'image disponible</p>
+    {% endif %}
     {{ form_errors(form) }}
     {{ form_widget(form) }}
-
     {{ form_rest(form) }}
 
-        <div class="modal-footer">
+    <div class="modal-footer">
             <button type="submit" class="btn btn-secondary">{{ course.id ? 'action.save'|trans : 'action.add'|trans }}</button>
         </div>
 {% endblock %}
