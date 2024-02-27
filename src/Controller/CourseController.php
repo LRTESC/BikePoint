@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Entity\Course;
 use App\Entity\User;
 use App\Form\CourseType;
+use App\Security\CourseVoter;
 use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 use Doctrine\ORM\EntityManagerInterface;
 use Ecommit\CrudBundle\Controller\AbstractCrudController;
@@ -18,7 +19,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\CurrentUser;
-use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class CourseController extends AbstractCrudController
 {
@@ -105,12 +105,9 @@ class CourseController extends AbstractCrudController
     }
 
     #[Route(path: '/courses/edit/{id}', name: 'courses_edit')]
-    #[IsGranted('ROLE_USER')]
     public function editAction(EntityManagerInterface $entityManager, Request $request, Course $course, #[CurrentUser] User $currentUser): Response
     {
-        if ($currentUser !== $course->getAuthor() && !$this->isGranted('ROLE_ADMIN')) {
-            throw $this->createAccessDeniedException();
-        }
+        $this->denyAccessUnlessGranted(CourseVoter::EDIT, $course);
 
         $form = $this->createForm(CourseType::class, $course);
 
@@ -171,12 +168,9 @@ class CourseController extends AbstractCrudController
     }
 
     #[Route(path: '/courses/delete/{id}', name: 'courses_ajax_delete')]
-    #[IsGranted('ROLE_USER')]
     public function deleteAction(EntityManagerInterface $entityManager, Course $course, #[CurrentUser] User $currentUser): Response
     {
-        if ($currentUser !== $course->getAuthor() && !$this->isGranted('ROLE_ADMIN')) {
-            throw $this->createAccessDeniedException();
-        }
+        $this->denyAccessUnlessGranted(CourseVoter::DELETE, $course);
 
         try {
             $entityManager->remove($course);
