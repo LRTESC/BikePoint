@@ -18,6 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\CurrentUser;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class CourseController extends AbstractCrudController
 {
@@ -104,8 +105,13 @@ class CourseController extends AbstractCrudController
     }
 
     #[Route(path: '/courses/edit/{id}', name: 'courses_edit')]
-    public function editAction(EntityManagerInterface $entityManager, Request $request, Course $course): Response
+    #[IsGranted('ROLE_USER')]
+    public function editAction(EntityManagerInterface $entityManager, Request $request, Course $course, #[CurrentUser] User $currentUser): Response
     {
+        if ($currentUser !== $course->getAuthor() && !$this->isGranted('ROLE_ADMIN')) {
+            throw $this->createAccessDeniedException();
+        }
+
         $form = $this->createForm(CourseType::class, $course);
 
         $form->handleRequest($request);
@@ -165,8 +171,13 @@ class CourseController extends AbstractCrudController
     }
 
     #[Route(path: '/courses/delete/{id}', name: 'courses_ajax_delete')]
-    public function deleteAction(EntityManagerInterface $entityManager, Course $course): Response
+    #[IsGranted('ROLE_USER')]
+    public function deleteAction(EntityManagerInterface $entityManager, Course $course, #[CurrentUser] User $currentUser): Response
     {
+        if ($currentUser !== $course->getAuthor() && !$this->isGranted('ROLE_ADMIN')) {
+            throw $this->createAccessDeniedException();
+        }
+
         try {
             $entityManager->remove($course);
             $entityManager->flush();
