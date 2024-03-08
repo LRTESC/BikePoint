@@ -105,7 +105,7 @@ class CourseController extends AbstractCrudController
     }
 
     #[Route(path: '/courses/edit/{id}', name: 'courses_edit')]
-    public function editAction(EntityManagerInterface $entityManager, Request $request, Course $course, #[CurrentUser] User $currentUser): Response
+    public function editAction(EntityManagerInterface $entityManager, Request $request, Course $course): Response
     {
         $this->denyAccessUnlessGranted(CourseVoter::EDIT, $course);
 
@@ -168,7 +168,7 @@ class CourseController extends AbstractCrudController
     }
 
     #[Route(path: '/courses/delete/{id}', name: 'courses_ajax_delete')]
-    public function deleteAction(EntityManagerInterface $entityManager, Course $course, #[CurrentUser] User $currentUser): Response
+    public function deleteAction(EntityManagerInterface $entityManager, Course $course): Response
     {
         $this->denyAccessUnlessGranted(CourseVoter::DELETE, $course);
 

@@ -20,35 +20,35 @@ class CourseType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'label.title',
+                'label' => 'label.title2',
             ])
             ->add('description', TextType::class, [
-                'label' => 'label.description',
+                'label' => 'label.description2',
             ])
             ->add('zipCode', TextType::class, [
-                'label' => 'label.zipCode',
+                'label' => 'label.zipCode2',
             ])
             ->add('city', TextType::class, [
-                'label' => 'label.city',
+                'label' => 'label.city2',
             ])
             ->add('level', EntityType::class, [
-                'label' => 'label.level',
+                'label' => 'label.level2',
                 'class' => Level::class,
             ])
             ->add('distance', TextType::class, [
-                'label' => 'label.distance',
+                'label' => 'label.distance2',
             ])
             ->add('positiveAscent', TextType::class, [
-                'label' => 'label.positiveAscent',
+                'label' => 'label.positiveAscent2',
             ])
             ->add('maximumAltitude', TextType::class, [
-                'label' => 'label.maximumAltitude',
+                'label' => 'label.maximumAltitude2',
             ])
             ->add('negativeGradient', TextType::class, [
-                'label' => 'label.negativeGradient',
+                'label' => 'label.negativeGradient2',
             ])
             ->add('minimumAltitude', TextType::class, [
-                'label' => 'label.minimumAltitude',
+                'label' => 'label.minimumAltitude2',
             ])
             ->add('picture', FileType::class, options: [
                 'label' => 'label.pictureCourse',

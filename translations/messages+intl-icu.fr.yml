@@ -1,7 +1,6 @@
 label:
   brand: Marque
   country_code: Code pays
-  city: Ville
   name: Nom
   id: Id
   firstname: Prénom
@@ -17,9 +16,21 @@ label:
   no: Non
   roles: Autorisation d'accés
   hello: Bonjour
+  title2: Titre *
+  description2: Description *
+  zipCode2: Code postal *
+  city2: Ville *
+  level2: Niveau de difficulté *
+  distance2: Kilomètres parcourus *
+  positiveAscent2: Ascension positive *
+  maximumAltitude2: Altitude maximale *
+  negativeGradient2: Pente négative *
+  minimumAltitude2: Altitude minimale *
+  pictureCourse2: Photo du parcours
   title: Titre
   description: Description
   zipCode: Code postal
+  city: Ville
   level: Niveau de difficulté
   distance: Kilomètres parcourus
   positiveAscent: Ascension positive
@@ -93,6 +104,8 @@ message:
   the_Bikepoint_team: L'équipe Bikepoint.
   course_successfully_added: Parcours ajouté avec succès.
   course_successfuly_modified: Parcours modifié avec succès.
+  no_image_available: < Pas d'image disponible >
+  require: Tous les champs sont obligatoires *
 
 action:
   login: Se connecter

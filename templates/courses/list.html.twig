@@ -18,21 +18,22 @@
                         <strong>{{ 'label.level'|trans }}:</strong> {{ course.level }}
                     </div>
                     <div class="col">
-                        <strong>{{ 'label.distance'|trans }}:</strong> {{ course.distance }}
+                        <strong>{{ 'label.distance'|trans }}:</strong> {{ course.distance }} kms
                     </div>
                     <div class="col">
-                        <strong>{{ 'label.positiveAscent'|trans }}:</strong> {{ course.positiveAscent }}
+                        <strong>{{ 'label.positiveAscent'|trans }}:</strong> {{ course.positiveAscent }} m
                     </div>
                     <div class="col">
-                        <strong>{{ 'label.maximumAltitude'|trans }}:</strong> {{ course.maximumAltitude }}
+                        <strong>{{ 'label.maximumAltitude'|trans }}:</strong> {{ course.maximumAltitude }} m
                     </div>
                     <div class="col">
-                        <strong>{{ 'label.negativeGradient'|trans }}:</strong> {{ course.negativeGradient }}
+                        <strong>{{ 'label.negativeGradient'|trans }}:</strong> {{ course.negativeGradient }} m
                     </div>
                     <div class="col">
-                        <strong>{{ 'label.minimumAltitude'|trans }}:</strong> {{ course.minimumAltitude }}
+                        <strong>{{ 'label.minimumAltitude'|trans }}:</strong> {{ course.minimumAltitude }} m
                     </div>
                     <div class="text-center mt-3">
+                        <a href="{{ path('courses_image', {'id': course.id}) }}"><i class="fa-solid fa-eye"></i></a>
                         {% if is_granted('edit', course) %}
                             &nbsp;&nbsp;
                             <a href="{{ path('courses_edit', {'id': course.id}) }}"><i class="fa-solid fa-pen"></i></a>
